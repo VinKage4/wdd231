@@ -51,43 +51,44 @@
   </header>
 
   <main class="container">
-    <h1>Home</h1>
+  <h1>Home</h1>
 
-    <!-- Two-column layout on large screens to match the wireframe -->
-    <div class="home-grid">
-      <!-- About Me panel -->
-      <section id="about" class="panel" aria-labelledby="about-h2">
-        <h2 id="about-h2" class="panel-title">About Me</h2>
-        <p>
-          My name is Vinicius I'm from Brazil and I currently live in the United States, I love learning about technology and I'm love snow sports such as snowboard, snowmobile country sky.
-        </p>
-      </section>
+  <div class="home-grid">
+    <!-- 1) About Me -->
+    <section id="about" class="panel" aria-labelledby="about-h2">
+      <h2 id="about-h2" class="panel-title">About Me</h2>
+      <p>
+        My name is Vinicius I'm from Brazil and I currently live in the United States, I love learning
+        about technology and I'm love snow sports such as snowboard, snowmobile country sky.
+      </p>
+    </section>
 
-      <!-- Student Photo panel -->
-      <aside id="photo" class="panel" aria-labelledby="photo-h2">
-        <h2 id="photo-h2" class="panel-title">Student Photo</h2>
-        <figure class="photo-frame">
-          <!-- Replace with your optimized image (≤125 kB) -->
-          <img src="images/profile-optimized.webp" alt="Portrait of Vinicius" width="360" height="360" loading="lazy" decoding="async"/>
-        </figure>
-      </aside>
+    <!-- 2) Student Photo (changed from <aside> to <section>) -->
+    <section id="photo" class="panel" aria-labelledby="photo-h2">
+      <h2 id="photo-h2" class="panel-title">Student Photo</h2>
+      <figure class="photo-frame">
+        <img src="images/profile-optimized.webp" alt="Portrait of Vinicius"
+             width="360" height="360" loading="lazy" decoding="async" />
+      </figure>
+    </section>
 
-      <!-- Courses panel (spans both columns on large screens) -->
-      <section id="certificate" class="panel full" aria-labelledby="cert-h2">
-        <h2 id="cert-h2" class="panel-title">Web Certificate Courses</h2>
+    <!-- 3) Web Certificate Courses -->
+    <section id="certificate" class="panel full" aria-labelledby="cert-h2">
+      <h2 id="cert-h2" class="panel-title">Web Certificate Courses</h2>
 
-        <div class="filters" role="group" aria-label="Course filters">
-          <button class="btn" data-filter="all">All</button>
-          <button class="btn" data-filter="cse">CSE</button>
-          <button class="btn" data-filter="wdd">WDD</button>
-        </div>
+      <div class="filters" role="group" aria-label="Course filters">
+        <button class="btn" data-filter="all">All</button>
+        <button class="btn" data-filter="cse">CSE</button>
+        <button class="btn" data-filter="wdd">WDD</button>
+      </div>
 
-        <div id="courseGrid" class="course-list" aria-live="polite"></div>
-
-        <p class="credits">The total credits for courses listed above is <span id="creditTotal">0</span></p>
-      </section>
-    </div>
-  </main>
+      <div id="courseGrid" class="course-list" aria-live="polite"></div>
+      <p class="credits">
+        The total credits for courses listed above is <span id="creditTotal">0</span>
+      </p>
+    </section>
+  </div>
+</main>
 
   <footer class="site-footer">
     <div class="container footer-wrap">
