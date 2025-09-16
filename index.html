@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WDD231 Home | Vinicius Sousa</title>
+  <meta name="description" content="WDD231 home page with semantic layout, responsive navigation, optimized images, and dynamic course filtering." />
+  <meta name="author" content="Vinicius Sousa" />
+
+  <!-- Google Fonts: single family per requirements; change if desired -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS (mobile-first then larger) -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- JS (deferred so it doesn't block HTML parsing/render) -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Home">
+        <!-- Simplified logo: green circle -->
+<svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site logo">
+<circle cx="32" cy="32" r="30" fill="#22c55e"/>
+</svg>
+        <span class="site-owner">Vinicius Sousa</span>
+      </a>
+
+      <!-- Hamburger: visible on small screens -->
+      <button id="menuToggle" class="menu-toggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Navigation: stacked on mobile, horizontal on large screens -->
+      <nav id="primaryNav" class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="chamber/">Chamber Project</a></li>
+          <li><a href="final/">Final Project</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Home</h1>
+
+    <!-- Two-column layout on large screens to match the wireframe -->
+    <div class="home-grid">
+      <!-- About Me panel -->
+      <section id="about" class="panel" aria-labelledby="about-h2">
+        <h2 id="about-h2" class="panel-title">About Me</h2>
+        <p>
+          Massa facilisis per. Suspendisse potenti. Etiam cursus mi at orci luctus, sed pulvinar metus
+          fermentum. Vivamus a dui vehicula, vulputate turpis id, convallis risus. Quam fringilla convallis
+          ridiculus malesuada accumsan potenti.
+        </p>
+      </section>
+
+      <!-- Student Photo panel -->
+      <aside id="photo" class="panel" aria-labelledby="photo-h2">
+        <h2 id="photo-h2" class="panel-title">Student Photo</h2>
+        <figure class="photo-frame">
+          <!-- Replace with your optimized image (≤125 kB) -->
+          <img src="images/profile-optimized.webp" alt="Portrait of Vinicius" width="360" height="360" loading="lazy" decoding="async"/>
+        </figure>
+      </aside>
+
+      <!-- Courses panel (spans both columns on large screens) -->
+      <section id="certificate" class="panel full" aria-labelledby="cert-h2">
+        <h2 id="cert-h2" class="panel-title">Web Certificate Courses</h2>
+
+        <div class="filters" role="group" aria-label="Course filters">
+          <button class="btn" data-filter="all">All</button>
+          <button class="btn" data-filter="cse">CSE</button>
+          <button class="btn" data-filter="wdd">WDD</button>
+        </div>
+
+        <div id="courseGrid" class="course-list" aria-live="polite"></div>
+
+        <p class="credits">The total credits for courses listed above is <span id="creditTotal">0</span></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <!-- Social links row -->
+      <div class="social">
+        <a href="https://github.com/your-username" target="_blank" rel="me noopener noreferrer" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.12-1.51-1.12-1.51-.92-.64.07-.63.07-.63 1.02.07 1.55 1.07 1.55 1.07.9 1.58 2.36 1.13 2.94.86.09-.66.35-1.13.63-1.39-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05a9.2 9.2 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.64 1.03 2.75 0 3.94-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M6.94 8.5H3.75V20h3.19V8.5ZM5.35 7.09a1.85 1.85 0 1 0 0-3.7 1.85 1.85 0 0 0 0 3.7Zm4.25 12.91h3.19v-6.23c0-1.64.64-2.56 1.98-2.56 1.29 0 1.89.91 1.89 2.56V20h3.19v-6.99c0-3.1-1.65-4.55-3.86-4.55-1.81 0-2.61 1-3.04 1.69h.03V8.5h-3.38c.04.98 0 11.5 0 11.5Z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://x.com/your-handle" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h4.2l5.2 7.2L16.7 3H21l-7 9.6L21 21h-4.2l-5.2-7.2L7.3 21H3l7-9.4L3 3Z"/></svg>
+          <span>X</span>
+        </a>
+      </div>
+
+      <!-- Copyright line with placeholders (current year set in dates.js) -->
+      <p>© <span id="currentyear"></span> · <span>Vinicius Sousa</span> · <span>Utah, USA</span></p>
+      <!-- Last modified populated via JS -->
+      <p id="lastModified" class="muted"></p>
+    </div>
+  </footer>
+</body>
+</html>

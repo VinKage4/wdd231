@@ -1,0 +1,11 @@
+@media (min-width: 900px){
+  .menu-toggle{ display:none; }
+  .nav-list{ display:flex; gap:.25rem; }
+  .nav-list a{ padding:.6rem .9rem; }
+
+  .home-grid{ grid-template-columns: 2fr 1fr; }
+  .panel.full{ grid-column: 1 / -1; }
+
+  /* Make nav horizontal bar like the wireframe */
+  .site-header .header-bar{ gap:1rem; }
+}
