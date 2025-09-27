@@ -70,3 +70,21 @@ main h1{ font-size:clamp(1.4rem,2.5vw,2rem); margin:1rem 0 .5rem; }
 .footer-inner{ display:grid; gap:.5rem; padding:1rem 0; }
 .footer-dev{ color:var(--muted); font-size:.95rem; }
 @media (min-width:600px){ .footer-inner{ grid-template-columns:1fr auto; align-items:center; } }
+@media (max-width: 759px){
+  body.nav-open #primary-nav{
+    display:block;
+    position:absolute; left:0; right:0; top:100%;
+    background:var(--surface);
+    border-bottom:1px solid #e5e7eb;
+  }
+}
+
+/* Optional: footer icon styling (if not already present) */
+.social{ display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.social .icon{ width:44px; height:44px; display:grid; place-items:center;
+  text-decoration:none; border:1px solid #e5e7eb; border-radius:999px;
+  background:var(--surface); color:var(--ink); }
+.social .icon .svg{ width:22px; height:22px; display:block; }
+.social .facebook:hover{ background:#1877F2; border-color:#1877F2; color:#fff; }
+.social .twitter:hover { background:#000;    border-color:#000;    color:#fff; }
+.social .youtube:hover { background:#FF0000; border-color:#FF0000; color:#fff; }
