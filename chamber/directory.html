@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <!-- Required meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <title>PokéBiz Chamber | Pokémon Card Business Directory</title>
+  <meta name="description" content="Discover trusted Pokémon TCG stores, marketplaces, and grading services in our PokéBiz Chamber directory." />
+  <meta name="author" content="Vinicius Gustavo Silva de Sousa" />
+
+  <!-- Favicon (designed below) -->
+  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+  <link rel="alternate icon" href="images/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="images/favicon-180.png" />
+
+  <!-- Open Graph / Facebook (ABSOLUTE URLs after you deploy) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PokéBiz Chamber | Pokémon Card Business Directory" />
+  <meta property="og:description" content="Browse Pokémon TCG shops and marketplaces—compare members, links, and contacts." />
+  <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/chamber/images/og-image.jpg" />
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/chamber/directory.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body>
-    
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/favicon.ico" alt="" width="32" height="32" />
+        <span>PokéBiz Chamber</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a aria-current="page" href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Pokémon Card Business Directory</h1>
+
+    <div class="view-switcher" role="group" aria-label="View options">
+      <button id="gridBtn" class="switch active" aria-pressed="true">Grid</button>
+      <button id="listBtn" class="switch" aria-pressed="false">List</button>
+    </div>
+
+    <section id="directory" class="directory grid" aria-live="polite">
+      <!-- JS injects member cards/list here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>PokéBiz Chamber</strong><br>
+        Support & inquiries: <a href="mailto:contact@pokebiz.org">contact@pokebiz.org</a></p>
+      </div>
+      <div class="footer-dev">
+        <p>© <span id="year"></span> • Vinicius Gustavo Silva de Sousa • WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/directory.js" defer></script>
 </body>
 </html>

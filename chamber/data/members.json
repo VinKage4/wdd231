@@ -1,0 +1,75 @@
+[
+  {
+    "name": "TCGplayer",
+    "tagline": "Online Pokémon TCG Marketplace",
+    "address": "Online — ships worldwide",
+    "phone": "See website",
+    "website": "https://www.tcgplayer.com",
+    "logo": "tcgplayer.png",
+    "membership": 3,
+    "notes": "Marketplace for singles, sealed, and supplies."
+  },
+  {
+    "name": "Cardmarket",
+    "tagline": "Europe's Marketplace for TCGs",
+    "address": "Online — EU focused",
+    "phone": "See website",
+    "website": "https://www.cardmarket.com",
+    "logo": "cardmarket.png",
+    "membership": 3
+  },
+  {
+    "name": "Troll and Toad",
+    "tagline": "Singles • Sealed • Supplies",
+    "address": "Corbin, KY (Online + Retail)",
+    "phone": "See website",
+    "website": "https://www.trollandtoad.com",
+    "logo": "trollandtoad.png",
+    "membership": 2
+  },
+  {
+    "name": "Full Grip Games",
+    "tagline": "Competitive TCG Store",
+    "address": "Akron, OH (Online + Retail)",
+    "phone": "See website",
+    "website": "https://www.fullgripgames.com",
+    "logo": "fullgrip.png",
+    "membership": 2
+  },
+  {
+    "name": "Safari Zone Collectibles",
+    "tagline": "Pokémon Sealed & Accessories",
+    "address": "Columbus, OH (Online + Retail)",
+    "phone": "See website",
+    "website": "https://www.safarizonecollectibles.com",
+    "logo": "safarizone.png",
+    "membership": 2
+  },
+  {
+    "name": "PoTown Store",
+    "tagline": "PTCG Live Code Cards",
+    "address": "Online — digital delivery",
+    "phone": "See website",
+    "website": "https://www.potownstore.com",
+    "logo": "potown.png",
+    "membership": 1
+  },
+  {
+    "name": "Card Kingdom",
+    "tagline": "Cards & Games Retailer",
+    "address": "Seattle, WA (Online + Retail)",
+    "phone": "See website",
+    "website": "https://www.cardkingdom.com",
+    "logo": "cardkingdom.png",
+    "membership": 1
+  },
+  {
+    "name": "Collector's Cache",
+    "tagline": "TCG Retailer & Supplies",
+    "address": "Lenexa, KS (Online + Retail)",
+    "phone": "See website",
+    "website": "https://www.collectorscache.com",
+    "logo": "collectorscache.png",
+    "membership": 1
+  }
+]
