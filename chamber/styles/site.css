@@ -88,3 +88,58 @@ main h1{ font-size:clamp(1.4rem,2.5vw,2rem); margin:1rem 0 .5rem; }
 .social .facebook:hover{ background:#1877F2; border-color:#1877F2; color:#fff; }
 .social .twitter:hover { background:#000;    border-color:#000;    color:#fff; }
 .social .youtube:hover { background:#FF0000; border-color:#FF0000; color:#fff; }
+
+/* Anchor the dropdown under the header row */
+.header-inner { position: relative; }
+
+/* Mobile nav dropdown */
+@media (max-width: 759px){
+  .primary-nav{ display:none; position:absolute; left:0; right:0; top:100%;
+    background:var(--surface); border-bottom:1px solid #e5e7eb; z-index:1000; }
+  .primary-nav.open{ display:block; }
+  .primary-nav ul{ display:flex; flex-direction:column; gap:.25rem; padding:.5rem 1rem; margin:0; }
+}
+@media (min-width: 760px){
+  .nav-toggle{ display:none; }
+  .primary-nav{ position:static; display:block; border:0; }
+  .primary-nav ul{ flex-direction:row; gap:.75rem; padding:0; }
+}
+
+/* Hero */
+.hero{ position:relative; border-radius:var(--radius); overflow:hidden; background:#dbeafe;
+       margin:1rem 0 1.25rem; box-shadow:var(--shadow); }
+.hero img{ width:100%; height:clamp(220px,40vw,420px); object-fit:cover; display:block; }
+.hero .cta{ position:absolute; right:1rem; bottom:1rem; background:var(--surface); color:var(--ink);
+  border:1px solid #e5e7eb; border-radius:999px; padding:.6rem 1rem; text-decoration:none; font-weight:700; }
+
+/* Panels row */
+.panel{ background:var(--surface); border:1px solid #e5e7eb; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+.panel>h2{ margin:0; background:var(--bar); color:#fff; padding:.6rem .75rem; font-size:1rem; }
+.panel .content{ padding:.75rem; }
+
+.home-grid{ display:grid; gap:1rem; grid-template-columns:1fr; }
+@media (min-width: 900px){ .home-grid{ grid-template-columns:2fr 1fr 1fr; } }
+
+.weather-now{ display:grid; grid-template-columns:auto 1fr; gap:.5rem; align-items:center; }
+.weather-now .icon{ width:56px; height:56px; background:#f3f4f6; border-radius:50%; display:grid; place-items:center; }
+.kv{ margin:.2rem 0; color:var(--muted); }
+.kv strong{ color:var(--ink); }
+
+.forecast-list{ list-style:none; padding-left:0; margin:0; display:grid; gap:.25rem; }
+
+/* Spotlights */
+.spotlights{ margin:1rem 0; }
+.spotlight-grid{ display:grid; gap:1rem; }
+@media (min-width:900px){ .spotlight-grid{ grid-template-columns:repeat(3,1fr); } }
+
+/* Social icons (if not already in your CSS) */
+.social{ display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.social .icon{ width:44px; height:44px; display:grid; place-items:center; text-decoration:none;
+  border:1px solid #e5e7eb; border-radius:999px; background:var(--surface); color:var(--ink); }
+.social .icon .svg{ width:22px; height:22px; display:block; }
+.social .facebook:hover{ background:#1877F2; border-color:#1877F2; color:#fff; }
+.social .twitter:hover { background:#000;    border-color:#000;    color:#fff; }
+.social .youtube:hover { background:#FF0000; border-color:#FF0000; color:#fff; }
+
+/* A11y helper */
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
