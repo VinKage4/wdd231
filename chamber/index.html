@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>PokéBiz Chamber | Welcome</title>
-  <meta name="description" content="Welcome to PokéBiz Chamber — events, weather, and featured Pokémon TCG businesses." />
+  <meta name="description" content="Welcome to PokéBiz Chamber — events, weather for Salt Lake City, and featured Pokémon TCG businesses." />
   <meta name="author" content="Vinicius Gustavo Silva de Sousa" />
 
   <!-- Favicon -->
@@ -16,7 +16,7 @@
   <!-- Open Graph (update YOUR_USERNAME after deploy) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PokéBiz Chamber | Welcome" />
-  <meta property="og:description" content="Events, weather, and featured Pokémon TCG businesses to explore." />
+  <meta property="og:description" content="Events, live weather, and featured Pokémon TCG businesses to explore." />
   <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/chamber/images/og-image.jpg" />
   <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/chamber/index.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body>
+  <!-- Header / Nav (IDs must match JS) -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="PokéBiz Chamber home">
@@ -32,8 +33,8 @@
         <span>PokéBiz Chamber</span>
       </a>
 
-      <button id="nav-toggle" class="nav-toggle" aria-expanded="false"
-              aria-controls="primary-nav" aria-label="Menu">☰</button>
+      <button id="nav-toggle" class="nav-toggle"
+              aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">☰</button>
 
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
@@ -53,8 +54,8 @@
       <a class="cta" href="join.html">Join the Chamber</a>
     </section>
 
-    <!-- MAIN ROW: Events | Current Weather | Forecast -->
-    <section class="home-grid">
+    <!-- Events | Weather | Forecast -->
+    <section class="home-grid" aria-label="Highlights">
       <article class="panel">
         <h2>Upcoming Events</h2>
         <div class="content">
@@ -71,7 +72,7 @@
             <div class="icon" aria-hidden="true">⛅</div>
             <div>
               <div class="kv"><strong id="wxTemp">--°</strong> · <span id="wxDesc">Loading…</span></div>
-              <div class="kv"><span id="wxCity">Your City</span></div>
+              <div class="kv"><span id="wxCity">Salt Lake City, UT</span></div>
             </div>
           </div>
         </div>
@@ -87,21 +88,21 @@
       </article>
     </section>
 
-    <!-- SPOTLIGHTS -->
+    <!-- Spotlights -->
     <section class="spotlights" aria-label="Business Spotlights">
       <h2 class="sr-only">Spotlight Advertisements</h2>
-      <div id="spotlights" class="spotlight-grid">
-        <!-- JS injects 2–3 Gold/Silver members here -->
-      </div>
+      <div id="spotlights" class="spotlight-grid"><!-- JS injects 2–3 Gold/Silver members --></div>
     </section>
   </main>
 
+  <!-- Footer (with shorter mailto to satisfy the audit) -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p><strong>PokéBiz Chamber</strong><br>
         Support &amp; inquiries: <a href="mailto:info@pokebiz.org">info@pokebiz.org</a></p>
 
+        <!-- Social icons -->
         <div class="social" aria-label="Social media">
           <a class="icon facebook" href="https://facebook.com/YourPage" target="_blank" rel="noopener" aria-label="Facebook">
             <svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -128,6 +129,7 @@
     </div>
   </footer>
 
+  <!-- JS for this page -->
   <script src="scripts/index.js" defer></script>
 </body>
 </html>

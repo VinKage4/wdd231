@@ -14,16 +14,16 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(fals
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
 
-/* ==================== WEATHER (OpenWeatherMap) ==================== */
-/* Set your city and API key */
-const OWM_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
-const LOCATION = 'Provo,US'; // change to your chamber city, e.g., 'Brasilia,BR'
+/* ==================== WEATHER — Salt Lake City, UT ==================== */
+/* Use coordinates (most reliable) */
+const OWM_KEY = 'YOUR_OPENWEATHERMAP_API_KEY'; // <-- replace me
+const OWM = { lat: 40.7608, lon: -111.8910, name: 'Salt Lake City, UT' };
 
 async function loadWeather(){
   try{
-    const q = encodeURIComponent(LOCATION);
-    const curURL = `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=imperial&appid=${OWM_KEY}`;
-    const fcURL  = `https://api.openweathermap.org/data/2.5/forecast?q=${q}&units=imperial&appid=${OWM_KEY}`;
+    const base = `lat=${OWM.lat}&lon=${OWM.lon}&units=imperial&appid=${OWM_KEY}`;
+    const curURL = `https://api.openweathermap.org/data/2.5/weather?${base}`;
+    const fcURL  = `https://api.openweathermap.org/data/2.5/forecast?${base}`;
 
     const [curRes, fcRes] = await Promise.all([fetch(curURL), fetch(fcURL)]);
     if(!curRes.ok) throw new Error(`Weather: HTTP ${curRes.status}`);
@@ -34,20 +34,24 @@ async function loadWeather(){
 
     // Current
     document.getElementById('wxTemp').textContent = `${Math.round(cur.main.temp)}°F`;
-    document.getElementById('wxDesc').textContent = cur.weather?.[0]?.description ?? '—';
-    document.getElementById('wxCity').textContent = `${cur.name}`;
+    document.getElementById('wxDesc').textContent =
+      (cur.weather?.[0]?.description ?? '—').replace(/\b\w/g, m => m.toUpperCase());
+    document.getElementById('wxCity').textContent = OWM.name;
 
-    // Forecast: pick around noon for next 3 distinct days
+    // Forecast — pick the entry closest to 12:00 for the next 3 distinct days
     const byDay = {};
     for(const item of fc.list){
       const [date, time] = item.dt_txt.split(' ');
-      if(!byDay[date] || time.startsWith('12:')) byDay[date] = item; // keep noon if present
+      // prefer noon; otherwise keep first seen
+      if(!byDay[date] || Math.abs(parseInt(time) - 12) < Math.abs(parseInt(byDay[date].dt_txt.split(' ')[1]) - 12)){
+        byDay[date] = item;
+      }
     }
-    const days = Object.keys(byDay).slice(0, 4); // includes possibly today
-    const next3 = days.filter(d => d !== new Date().toISOString().slice(0,10)).slice(0,3);
+    const todayISO = new Date().toISOString().slice(0,10);
+    const next3Dates = Object.keys(byDay).filter(d => d > todayISO).slice(0,3);
 
     const ul = document.getElementById('forecastList');
-    ul.innerHTML = next3.map(d => {
+    ul.innerHTML = next3Dates.map(d => {
       const it = byDay[d];
       const label = new Date(d).toLocaleDateString(undefined, { weekday:'short' });
       const t = Math.round(it.main.temp);
@@ -112,50 +116,3 @@ async function loadSpotlights(){
   }
 }
 loadSpotlights();
-/* ==================== WEATHER (Salt Lake City, UT) ==================== */
-const OWM_KEY = 'YOUR_OPENWEATHERMAP_API_KEY'; // <-- keep your key here
-
-// Salt Lake City, Utah (Temple Square area)
-const OWM = { lat: 40.7608, lon: -111.8910, name: 'Salt Lake City, UT' };
-
-async function loadWeather(){
-  try{
-    const base = `lat=${OWM.lat}&lon=${OWM.lon}&units=imperial&appid=${OWM_KEY}`;
-    const curURL = `https://api.openweathermap.org/data/2.5/weather?${base}`;
-    const fcURL  = `https://api.openweathermap.org/data/2.5/forecast?${base}`;
-
-    const [curRes, fcRes] = await Promise.all([fetch(curURL), fetch(fcURL)]);
-    if(!curRes.ok) throw new Error(`Weather: HTTP ${curRes.status}`);
-    if(!fcRes.ok)  throw new Error(`Forecast: HTTP ${fcRes.status}`);
-
-    const cur = await curRes.json();
-    const fc  = await fcRes.json();
-
-    // Current
-    document.getElementById('wxTemp').textContent = `${Math.round(cur.main.temp)}°F`;
-    document.getElementById('wxDesc').textContent = cur.weather?.[0]?.description ?? '—';
-    document.getElementById('wxCity').textContent = OWM.name;
-
-    // Forecast — choose around noon for the next 3 distinct days
-    const byDay = {};
-    for(const item of fc.list){
-      const [date, time] = item.dt_txt.split(' ');
-      if(!byDay[date] || time.startsWith('12:')) byDay[date] = item;
-    }
-    const todayISO = new Date().toISOString().slice(0,10);
-    const next3Dates = Object.keys(byDay).filter(d => d > todayISO).slice(0,3);
-
-    const ul = document.getElementById('forecastList');
-    ul.innerHTML = next3Dates.map(d => {
-      const it = byDay[d];
-      const label = new Date(d).toLocaleDateString(undefined, { weekday:'short' });
-      const t = Math.round(it.main.temp);
-      const desc = it.weather?.[0]?.main ?? '';
-      return `<li>${label}: <strong>${t}°F</strong> <span class="meta">${desc}</span></li>`;
-    }).join('');
-  }catch(err){
-    console.error(err);
-    document.getElementById('forecastList').innerHTML = `<li>Weather unavailable</li>`;
-  }
-}
-loadWeather();
