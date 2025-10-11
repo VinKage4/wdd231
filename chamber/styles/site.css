@@ -246,3 +246,104 @@ dialog::backdrop{ background:rgba(0,0,0,.35); }
 /* Modals */
 dialog{ border:none; border-radius:14px; padding:1rem 1.2rem; box-shadow:var(--shadow); max-width:min(600px,90vw); }
 dialog::backdrop{ background:rgba(0,0,0,.35); }
+
+/* --- Tier color tokens --- */
+:root{
+  --gold-1:#fef3c7;  /* light */
+  --gold-2:#fde68a;  /* mid  */
+  --gold-3:#f59e0b;  /* border/accent */
+
+  --silver-1:#f8fafc;
+  --silver-2:#e5e7eb;
+  --silver-3:#9ca3af;
+
+  --bronze-1:#fff7ed;
+  --bronze-2:#fed7aa;
+  --bronze-3:#b45309;
+
+  --np-1:#ecfdf5;
+  --np-2:#d1fae5;
+  --np-3:#16a34a;
+}
+
+/* Base card look + smooth hover */
+.benefit-card{
+  transition:
+    background-color .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+.benefit-card:hover,
+.benefit-card:focus-within{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+}
+
+/* GOLD hover */
+.benefit-card.gold:hover,
+.benefit-card.gold:focus-within{
+  background: linear-gradient(180deg, var(--gold-1), var(--gold-2));
+  border-color: var(--gold-3);
+  color:#111;
+}
+.benefit-card.gold:hover .btn-ghost,
+.benefit-card.gold:focus-within .btn-ghost{
+  border-color: var(--gold-3);
+  background:#fff;
+}
+
+/* SILVER hover */
+.benefit-card.silver:hover,
+.benefit-card.silver:focus-within{
+  background: linear-gradient(180deg, var(--silver-1), var(--silver-2));
+  border-color: var(--silver-3);
+  color:#111;
+}
+.benefit-card.silver:hover .btn-ghost,
+.benefit-card.silver:focus-within .btn-ghost{
+  border-color: var(--silver-3);
+  background:#fff;
+}
+
+/* BRONZE hover */
+.benefit-card.bronze:hover,
+.benefit-card.bronze:focus-within{
+  background: linear-gradient(180deg, var(--bronze-1), var(--bronze-2));
+  border-color: var(--bronze-3);
+  color:#111;
+}
+.benefit-card.bronze:hover .btn-ghost,
+.benefit-card.bronze:focus-within .btn-ghost{
+  border-color: var(--bronze-3);
+  background:#fff;
+}
+
+/* NON-PROFIT (NP) hover */
+.benefit-card.np:hover,
+.benefit-card.np:focus-within{
+  background: linear-gradient(180deg, var(--np-1), var(--np-2));
+  border-color: var(--np-3);
+  color:#111;
+}
+.benefit-card.np:hover .btn-ghost,
+.benefit-card.np:focus-within .btn-ghost{
+  border-color: var(--np-3);
+  background:#fff;
+}
+
+/* Keyboard focus ring for the link */
+.benefit-card .btn-ghost:focus-visible{
+  outline:3px solid #93c5fd;
+  outline-offset:2px;
+  border-color:#93c5fd;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .benefit-card{ transition:none; }
+  .benefit-card:hover,
+  .benefit-card:focus-within{ transform:none; box-shadow:none; }
+}
