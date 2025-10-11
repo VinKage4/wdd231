@@ -33,156 +33,146 @@
   </header>
 
   <main class="container">
-    <h1>Join the Chamber</h1>
+  <h1 class="page-title">Join Us – PokéBiz Chamber</h1>
 
-    <!-- Layout: form + membership cards -->
-    <section class="join-layout">
-      <!-- FORM -->
-      <form class="join-form" method="get" action="thankyou.html" novalidate>
-        <!-- First name -->
-        <label title="Enter your given name">
-          First Name
-          <input type="text" name="first" required autocomplete="given-name" placeholder="Ash" />
+  <section class="join-grid">
+    <!-- LEFT: APPLICATION CARD -->
+    <form class="card join-card" method="get" action="thankyou.html" novalidate>
+      <h2 class="card-title">Membership Application</h2>
+
+      <label class="field">
+        <span class="label">First Name *</span>
+        <input type="text" name="first" required autocomplete="given-name" placeholder="John" />
+      </label>
+
+      <label class="field">
+        <span class="label">Last Name *</span>
+        <input type="text" name="last" required autocomplete="family-name" placeholder="Doe" />
+      </label>
+
+      <label class="field" title="Only letters, hyphens, and spaces; min 7 characters.">
+        <span class="label">Organization Title</span>
+        <input type="text" name="orgTitle" autocomplete="organization-title"
+               pattern="^[A-Za-z\- ]{7,}$" placeholder="Store Manager" />
+      </label>
+
+      <label class="field">
+        <span class="label">Email *</span>
+        <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+      </label>
+
+      <label class="field">
+        <span class="label">Mobile Phone *</span>
+        <input type="tel" name="mobile" required autocomplete="tel" placeholder="+1 (555) 555-1234" />
+      </label>
+
+      <label class="field">
+        <span class="label">Organization Name *</span>
+        <input type="text" name="organization" required autocomplete="organization" placeholder="Pallet Town Cards" />
+      </label>
+
+      <fieldset class="field fieldset">
+        <legend class="label">Select a Membership Level *</legend>
+        <label class="option">
+          <input type="radio" name="membership" value="NP" required />
+          <span class="opt-title">Nonprofit (Free)</span>
         </label>
-
-        <!-- Last name -->
-        <label title="Enter your family name">
-          Last Name
-          <input type="text" name="last" required autocomplete="family-name" placeholder="Ketchum" />
+        <label class="option">
+          <input type="radio" name="membership" value="Bronze" />
+          <span class="opt-title">Bronze</span>
         </label>
-
-        <!-- Organizational title -->
-        <label title="Your role or title within your organization (letters, hyphens, spaces; min 7 chars)">
-          Organizational Title
-          <input type="text" name="orgTitle" autocomplete="organization-title"
-                 pattern="^[A-Za-z\- ]{7,}$"
-                 placeholder="Store Manager"
-                 title="Only letters, hyphens, and spaces. Minimum 7 characters." />
+        <label class="option">
+          <input type="radio" name="membership" value="Silver" />
+          <span class="opt-title">Silver</span>
         </label>
-
-        <!-- Email -->
-        <label title="Enter a valid email">
-          Email
-          <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+        <label class="option">
+          <input type="radio" name="membership" value="Gold" />
+          <span class="opt-title">Gold</span>
         </label>
+      </fieldset>
 
-        <!-- Mobile phone -->
-        <label title="Your mobile number">
-          Mobile Phone
-          <input type="tel" name="mobile" required autocomplete="tel" placeholder="+1 (555) 555-1234" />
-        </label>
+      <label class="field">
+        <span class="label">Organization Description</span>
+        <textarea name="description" rows="5" placeholder="We host weekly Pokémon TCG league, trade nights, and tournaments."></textarea>
+      </label>
 
-        <!-- Organization name -->
-        <label title="Your business/organization name">
-          Organization Name
-          <input type="text" name="organization" required autocomplete="organization" placeholder="Pallet Town Cards" />
-        </label>
+      <input type="hidden" name="timestamp" id="timestamp" />
 
-        <!-- Membership level (radios) -->
-        <fieldset class="membership-fieldset">
-          <legend>Membership Level</legend>
-          <label class="radio">
-            <input type="radio" name="membership" value="NP" required />
-            NP Membership — Nonprofit (Free)
-          </label>
-          <label class="radio">
-            <input type="radio" name="membership" value="Bronze" />
-            Bronze
-          </label>
-          <label class="radio">
-            <input type="radio" name="membership" value="Silver" />
-            Silver
-          </label>
-          <label class="radio">
-            <input type="radio" name="membership" value="Gold" />
-            Gold
-          </label>
-        </fieldset>
+      <button type="submit" class="btn-primary">Apply for Membership</button>
+    </form>
 
-        <!-- Description -->
-        <label title="Brief description of your business or organization">
-          Organization Description
-          <textarea name="description" rows="5" placeholder="We host weekly Pokémon TCG league, trade nights, and tournaments."></textarea>
-        </label>
-
-        <!-- Hidden timestamp -->
-        <input type="hidden" name="timestamp" id="timestamp" />
-
-        <!-- Submit -->
-        <button type="submit">Submit Application</button>
-      </form>
-
-      <!-- MEMBERSHIP CARDS (animated) -->
-      <aside class="membership-cards" aria-label="Membership options">
-        <article class="card member-card np">
-          <h3>NP Membership</h3>
-          <p>For nonprofits. No fee. Includes directory listing and community events access.</p>
-          <p><a href="#np-modal" data-open-modal>See benefits</a></p>
+    <!-- RIGHT: BENEFITS STACK -->
+    <aside class="card benefits">
+      <h2 class="card-title">Membership Benefits</h2>
+        <article class="benefit-card np">
+          <h3>Non-Profit Membership</h3>
+          <p>Basic benefits for non-profit organizations.</p>
+          <a class="btn-ghost" href="#np-modal" data-open-modal data-level="NP" aria-label="See benefits for Non-Profit">See benefits</a>
         </article>
 
-        <article class="card member-card bronze">
-          <h3>Bronze</h3>
-          <p>Starter tier with basic promotions and event discounts.</p>
-          <p><a href="#bronze-modal" data-open-modal>See benefits</a></p>
+        <article class="benefit-card bronze">
+          <h3>Bronze Membership</h3>
+          <p>Ideal for small businesses getting started.</p>
+          <a class="btn-ghost" href="#bronze-modal" data-open-modal data-level="Bronze" aria-label="See benefits for Bronze">See benefits</a>
         </article>
 
-        <article class="card member-card silver">
-          <h3>Silver</h3>
-          <p>Enhanced visibility: spotlight rotation and training webinars.</p>
-          <p><a href="#silver-modal" data-open-modal>See benefits</a></p>
+        <article class="benefit-card silver">
+          <h3>Silver Membership</h3>
+          <p>Enhanced visibility and networking opportunities.</p>
+          <a class="btn-ghost" href="#silver-modal" data-open-modal data-level="Silver" aria-label="See benefits for Silver">See benefits</a>
         </article>
 
-        <article class="card member-card gold">
-          <h3>Gold</h3>
-          <p>Top exposure: homepage spotlights, premium listings, and sponsor features.</p>
-          <p><a href="#gold-modal" data-open-modal>See benefits</a></p>
+        <article class="benefit-card gold">
+          <h3>Gold Membership</h3>
+          <p>Premium benefits and exclusive event access.</p>
+          <a class="btn-ghost" href="#gold-modal" data-open-modal data-level="Gold" aria-label="See benefits for Gold">See benefits</a>
         </article>
-      </aside>
-    </section>
+    </aside>
+  </section>
 
-    <!-- MODALS -->
-    <dialog id="np-modal" aria-labelledby="np-title">
-      <h2 id="np-title">NP Membership Benefits</h2>
-      <ul>
-        <li>Free membership for eligible nonprofits</li>
-        <li>Directory listing</li>
-        <li>Access to community events</li>
-      </ul>
-      <form method="dialog"><button>Close</button></form>
-    </dialog>
+  <!-- MODALS (unchanged structure; keep your existing lists if you want) -->
+  <dialog id="np-modal" aria-labelledby="np-title">
+    <h2 id="np-title">NP Membership Benefits</h2>
+    <ul>
+      <li>Free membership for eligible nonprofits</li>
+      <li>Directory listing</li>
+      <li>Access to community events</li>
+    </ul>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
 
-    <dialog id="bronze-modal" aria-labelledby="bronze-title">
-      <h2 id="bronze-title">Bronze Benefits</h2>
-      <ul>
-        <li>Directory listing + social shout-outs</li>
-        <li>5% event discount</li>
-        <li>Quarterly networking</li>
-      </ul>
-      <form method="dialog"><button>Close</button></form>
-    </dialog>
+  <dialog id="bronze-modal" aria-labelledby="bronze-title">
+    <h2 id="bronze-title">Bronze Benefits</h2>
+    <ul>
+      <li>Directory listing + social shout-outs</li>
+      <li>5% event discount</li>
+      <li>Quarterly networking</li>
+    </ul>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
 
-    <dialog id="silver-modal" aria-labelledby="silver-title">
-      <h2 id="silver-title">Silver Benefits</h2>
-      <ul>
-        <li>Includes Bronze perks</li>
-        <li>Homepage spotlight rotation</li>
-        <li>Training webinars</li>
-        <li>10% event discount</li>
-      </ul>
-      <form method="dialog"><button>Close</button></form>
-    </dialog>
+  <dialog id="silver-modal" aria-labelledby="silver-title">
+    <h2 id="silver-title">Silver Benefits</h2>
+    <ul>
+      <li>Includes Bronze perks</li>
+      <li>Homepage spotlight rotation</li>
+      <li>Training webinars</li>
+      <li>10% event discount</li>
+    </ul>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
 
-    <dialog id="gold-modal" aria-labelledby="gold-title">
-      <h2 id="gold-title">Gold Benefits</h2>
-      <ul>
-        <li>Includes Silver perks</li>
-        <li>Premium homepage spotlight placement</li>
-        <li>Co-sponsor features</li>
-        <li>15% event discount</li>
-      </ul>
-      <form method="dialog"><button>Close</button></form>
-    </dialog>
-  </main>
+  <dialog id="gold-modal" aria-labelledby="gold-title">
+    <h2 id="gold-title">Gold Benefits</h2>
+    <ul>
+      <li>Includes Silver perks</li>
+      <li>Premium spotlight placement</li>
+      <li>Co-sponsor features</li>
+      <li>15% event discount</li>
+    </ul>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
+</main>
 
   <!-- Footer -->
   <footer class="site-footer">
