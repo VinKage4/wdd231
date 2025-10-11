@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PokéBiz Chamber | Thank You</title>
+  <meta name="description" content="Thanks for applying to join the PokéBiz Chamber." />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="PokéBiz Chamber home">
+        <img src="images/favicon.ico" alt="" width="32" height="32" />
+        <span>PokéBiz Chamber</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">☰</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Thank You!</h1>
+    <p>We received your application. Here’s what you submitted:</p>
+
+    <div class="panel">
+      <h2>Submission Details</h2>
+      <div class="content">
+        <ul id="submissionList" class="submission-list">
+          <!-- JS will populate -->
+        </ul>
+      </div>
+    </div>
+
+    <p><a href="join.html">Go back to the Join page</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>PokéBiz Chamber</strong><br>
+        Support &amp; inquiries: <a href="mailto:info@pokebiz.org">info@pokebiz.org</a></p>
+      </div>
+      <div class="footer-dev">
+        <p>© <span id="year"></span> • Vinicius Gustavo Silva de Sousa • WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/thankyou.js" defer></script>
+</body>
+</html>
