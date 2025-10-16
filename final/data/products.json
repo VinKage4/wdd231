@@ -1,0 +1,19 @@
+[
+  {"id":"psa10-charizard","type":"Card","name":"Charizard VMAX (Rainbow)","grade":"PSA 10","series":"Sword & Shield","price":399.99,"img":"images/products/psa10-charizard.webp","desc":"Gem Mint rainbow rare from SWSH era."},
+  {"id":"bgs95-lugia","type":"Card","name":"Lugia Neo Genesis","grade":"BGS 9.5","series":"Neo Genesis","price":1199.00,"img":"images/products/bgs95-lugia.webp","desc":"High subgrades; iconic Johto legendary."},
+  {"id":"psa9-pikachu","type":"Card","name":"Pikachu Base Set (1st Ed)","grade":"PSA 9","series":"Base Set","price":289.00,"img":"images/products/psa9-pikachu.webp","desc":"Classic yellow cheeks artwork."},
+  {"id":"cgc9-mewtwo","type":"Card","name":"Mewtwo EX","grade":"CGC 9","series":"XY","price":129.99,"img":"images/products/cgc9-mewtwo.webp","desc":"Strong centering; clean holo."},
+  {"id":"psa10-umbreon","type":"Card","name":"Umbreon Gold Star","grade":"PSA 10","series":"POP Series 5","price":6999.00,"img":"images/products/psa10-umbreon.webp","desc":"Blue star grail in pristine condition."},
+  {"id":"psa10-eevee","type":"Card","name":"Eevee (Alt Art)","grade":"PSA 10","series":"Evolving Skies","price":249.00,"img":"images/products/psa10-eevee.webp","desc":"Alt art favorite; vibrant colors."},
+  {"id":"psa9-blastoise","type":"Card","name":"Blastoise Base Set Holo","grade":"PSA 9","series":"Base Set","price":699.00,"img":"images/products/psa9-blastoise.webp","desc":"Strong holo with minimal print lines."},
+
+  {"id":"switch-arceus","type":"Game","name":"Pokémon Legends: Arceus","platform":"Switch","price":39.99,"img":"images/products/switch-arceus.webp","desc":"Open-world Sinnoh reimagined."},
+  {"id":"switch-scarlet","type":"Game","name":"Pokémon Scarlet","platform":"Switch","price":44.99,"img":"images/products/switch-scarlet.webp","desc":"Paldea adventure."},
+  {"id":"gb-pokemon-blue","type":"Game","name":"Pokémon Blue","platform":"Game Boy","price":69.99,"img":"images/products/gb-blue.webp","desc":"Original GB cart—battery tested."},
+  {"id":"gba-emerald","type":"Game","name":"Pokémon Emerald","platform":"Game Boy","price":169.00,"img":"images/products/gba-emerald.webp","desc":"Authentic board; save works."},
+  {"id":"gcn-colosseum","type":"Game","name":"Pokémon Colosseum","platform":"GameCube","price":89.00,"img":"images/products/gcn-colosseum.webp","desc":"Includes case & manual."},
+  {"id":"3ds-xy","type":"Game","name":"Pokémon X","platform":"3DS","price":34.99,"img":"images/products/3ds-x.webp","desc":"Cartridge only; tested."},
+  {"id":"3ds-alpha","type":"Game","name":"Alpha Sapphire","platform":"3DS","price":49.99,"img":"images/products/3ds-alpha.webp","desc":"Complete in box."},
+  {"id":"switch-mystery-dungeon","type":"Game","name":"Rescue Team DX","platform":"Switch","price":29.99,"img":"images/products/switch-mddx.webp","desc":"Remake of classic Mystery Dungeon."},
+  {"id":"gcn-gale","type":"Game","name":"Gale of Darkness","platform":"GameCube","price":219.00,"img":"images/products/gcn-gale.webp","desc":"Highly sought after Orre saga."}
+]
