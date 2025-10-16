@@ -1,0 +1,66 @@
+[
+  {
+    "id": "a",
+    "title": "Temple Square",
+    "image": "images/discover/temple-square.webp",
+    "address": "50 N Temple, Salt Lake City, UT",
+    "description": "Historic downtown complex with landscaped gardens and iconic architecture.",
+    "area": "a"
+  },
+  {
+    "id": "b",
+    "title": "City Creek Center",
+    "image": "images/discover/city-creek.webp",
+    "address": "50 S Main St, Salt Lake City, UT",
+    "description": "Open-air shopping with a creek and retractable roof—great food & retail.",
+    "area": "b"
+  },
+  {
+    "id": "c",
+    "title": "Liberty Park",
+    "image": "images/discover/liberty-park.webp",
+    "address": "600 E 900 S, Salt Lake City, UT",
+    "description": "Walking paths, pond, aviary, and tons of family-friendly space.",
+    "area": "c"
+  },
+  {
+    "id": "d",
+    "title": "Natural History Museum",
+    "image": "images/discover/nhmu.webp",
+    "address": "301 Wakara Way, Salt Lake City, UT",
+    "description": "Fossils, minerals, and Utah science—beautiful building above the city.",
+    "area": "d"
+  },
+  {
+    "id": "f",
+    "title": "Vivint Arena",
+    "image": "images/discover/vivint-arena.webp",
+    "address": "301 S Temple, Salt Lake City, UT",
+    "description": "Home to pro sports and concerts; downtown energy hub.",
+    "area": "e"
+  },
+  {
+    "id": "e",
+    "title": "Red Butte Garden",
+    "image": "images/discover/red-butte.webp",
+    "address": "300 Wakara Way, Salt Lake City, UT",
+    "description": "Botanical gardens and summer concert series in the foothills.",
+    "area": "f"
+  },
+  {
+    "id": "g",
+    "title": "Great Salt Lake Marina",
+    "image": "images/discover/great-salt-lake.webp",
+    "address": "13312 W 1075 S, Magna, UT",
+    "description": "Unique lake views, sunsets, and the smell of adventure.",
+    "area": "g"
+  },
+  {
+    "id": "h",
+    "title": "Hogle Zoo",
+    "image": "images/discover/hogle-zoo.webp",
+    "address": "2600 Sunnyside Ave S, Salt Lake City, UT",
+    "description": "Animal conservation and family learning experiences.",
+    "area": "h"
+  }
+]
