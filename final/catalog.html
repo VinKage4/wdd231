@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Catalog • PokeRetro Shop</title>
-  <meta name="description" content="Browse graded Pokémon cards and retro video games. Filter by grade, platform, and price.">
-  <meta name="author" content="Your Name">
-  <link rel="icon" href="images/favicon.ico">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="PokeRetro Catalog">
-  <meta property="og:description" content="Graded Pokémon cards & retro games.">
-  <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/final/images/og-index.jpg">
-  <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/final/catalog.html">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/site.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PokéBiz Chamber | Catalog</title>
+  <meta name="description" content="Shop graded Pokémon cards and video games from PokéBiz Chamber." />
+  <meta name="author" content="Vinicius Gustavo Silva de Sousa" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Social (replace YOUR_USERNAME after deploy) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PokéBiz Chamber | Catalog" />
+  <meta property="og:description" content="Curated graded Pokémon cards and retro games." />
+  <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/final/images/og-index.jpg" />
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/final/catalog.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/site.css" />
+  <link rel="stylesheet" href="styles/catalog.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/favicon.ico" alt="" width="32" height="32">
-        <span>PokeRetro Shop</span>
+      <a class="brand" href="index.html" aria-label="PokéBiz Chamber home">
+        <img src="images/favicon.ico" alt="" width="32" height="32" />
+        <span>PokéBiz Chamber</span>
       </a>
       <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">☰</button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
@@ -34,32 +38,50 @@
     </div>
   </header>
 
-  <main class="container">
-    <h1 class="page-title">Catalog</h1>
+  <main class="container catalog-wrap">
+    <h1>Catalog</h1>
 
-    <form id="filters" class="filters" aria-label="Filters">
-      <input name="q" type="search" placeholder="Search…" aria-label="Search">
-      <select name="type" aria-label="Type">
-        <option value="all">All Types</option>
-        <option value="Card">Graded Cards</option>
-        <option value="Game">Video Games</option>
+    <!-- Filter bar -->
+    <form id="filters" class="filters" role="search">
+      <input id="q" class="search" type="search" placeholder="Search…" aria-label="Search catalog" />
+
+      <select id="type" aria-label="Type">
+        <option value="">All Types</option>
+        <option value="card">Cards</option>
+        <option value="game">Games</option>
       </select>
-      <select name="platform" aria-label="Platform">
-        <option value="all">All Platforms</option>
-        <option>Switch</option><option>3DS</option><option>GameCube</option><option>Game Boy</option>
+
+      <select id="platform" aria-label="Platform">
+        <option value="">All Platforms</option>
+        <option value="Switch">Switch</option>
+        <option value="3DS">3DS</option>
+        <option value="DS">DS</option>
+        <option value="GBA">GBA</option>
+        <option value="GB">GB</option>
       </select>
-      <select name="grade" aria-label="Grade">
-        <option value="all">All Grades</option>
-        <option>PSA 10</option><option>PSA 9</option><option>BGS 9.5</option><option>CGC 9</option>
+
+      <select id="grade" aria-label="Grade">
+        <option value="">All Grades</option>
+        <option value="PSA 10">PSA 10</option>
+        <option value="PSA 9">PSA 9</option>
+        <option value="BGS 9.5">BGS 9.5</option>
+        <option value="CGC 9">CGC 9</option>
       </select>
-      <label>Max $ <input name="max" type="number" step="0.01" min="0" placeholder="200"></label>
+
+      <label class="maxwrap">
+        <span>Max $</span>
+        <input id="max" type="number" inputmode="numeric" min="0" step="10" placeholder="200" />
+      </label>
     </form>
 
+    <!-- Grid -->
     <section id="grid" class="grid" aria-live="polite"></section>
-    <div id="modalHost"></div>
+
+    <!-- Empty state -->
+    <p id="empty" class="empty" hidden>No items match your filters.</p>
   </main>
 
-    <!-- Footer (with shorter mailto to satisfy the audit) -->
+   <!-- Footer (with shorter mailto to satisfy the audit) -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -93,7 +115,6 @@
     </div>
   </footer>
 
-  <script src="scripts/main.js" defer></script>
-  <script type="module" src="scripts/catalog.js" defer></script>
+  <script src="scripts/catalog.js" type="module" defer></script>
 </body>
 </html>
