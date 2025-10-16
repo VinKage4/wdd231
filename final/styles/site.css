@@ -139,3 +139,28 @@ dialog{border:none;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.2);padd
 .contact-info hr { border: 0; border-top: 1px solid #e5e7eb; margin: .8rem 0; }
 .contact-info .bullets { margin: 0; padding-left: 1.1rem; color: var(--muted); }
 .contact-info .bullets li { margin: .4rem 0; }
+
+/* Footer */
+
+.site-footer{ margin-top:2rem; background:var(--surface); border-top:1px solid #e5e7eb; }
+.footer-inner{ display:grid; gap:.5rem; padding:1rem 0; }
+.footer-dev{ color:var(--muted); font-size:.95rem; }
+@media (min-width:600px){ .footer-inner{ grid-template-columns:1fr auto; align-items:center; } }
+@media (max-width: 759px){
+  body.nav-open #primary-nav{
+    display:block;
+    position:absolute; left:0; right:0; top:100%;
+    background:var(--surface);
+    border-bottom:1px solid #e5e7eb;
+  }
+}
+
+/*  footer icon styling  */
+.social{ display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.social .icon{ width:44px; height:44px; display:grid; place-items:center;
+  text-decoration:none; border:1px solid #e5e7eb; border-radius:999px;
+  background:var(--surface); color:var(--ink); }
+.social .icon .svg{ width:22px; height:22px; display:block; }
+.social .facebook:hover{ background:#1877F2; border-color:#1877F2; color:#fff; }
+.social .twitter:hover { background:#000;    border-color:#000;    color:#fff; }
+.social .youtube:hover { background:#FF0000; border-color:#FF0000; color:#fff; }
