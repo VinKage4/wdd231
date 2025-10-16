@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta / SEO -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PokeRetro Shop | Graded Pokémon Cards & Video Games</title>
+  <meta name="description" content="Shop PSA/BGS graded Pokémon cards and classic Nintendo games. Fast shipping & collectors-first service.">
+  <meta name="author" content="Your Name">
+
+  <!-- Icons -->
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PokeRetro Shop">
+  <meta property="og:description" content="Graded Pokémon cards & retro video games.">
+  <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/final/images/og-index.jpg">
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/final/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/favicon.ico" alt="" width="32" height="32">
+        <span>PokeRetro Shop</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">☰</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a aria-current="page" href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <img src="images/og-index.jpg" alt="Graded Pokémon cards and retro consoles" width="1200" height="500" loading="lazy">
+      <a class="cta" href="catalog.html">Shop Catalog</a>
+    </section>
+
+    <!-- Featured -->
+    <section aria-label="Featured items">
+      <h1 class="page-title">Featured Picks</h1>
+      <div id="featuredGrid" class="grid"></div>
+    </section>
+
+    <section class="cta-strip">
+      <h2>Want first dibs on restocks?</h2>
+      <a class="btn-primary" href="contact.html">Join the list</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>PokeRetro Shop</strong><br>
+        Support: <a href="mailto:support@pokeretro.example">support@pokeretro.example</a></p>
+        <p><a href="https://youtu.be/YOUR_DEMO_VIDEO" target="_blank" rel="noopener">Project demo video</a> •
+           <a href="attributions.html">Attributions</a></p>
+      </div>
+      <div class="footer-dev">
+        <p>© <span id="year"></span> • Your Name • WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/index.js" defer></script>
+</body>
+</html>

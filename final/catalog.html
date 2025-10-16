@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Catalog • PokeRetro Shop</title>
+  <meta name="description" content="Browse graded Pokémon cards and retro video games. Filter by grade, platform, and price.">
+  <meta name="author" content="Your Name">
+  <link rel="icon" href="images/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PokeRetro Catalog">
+  <meta property="og:description" content="Graded Pokémon cards & retro games.">
+  <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/final/images/og-index.jpg">
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/final/catalog.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/favicon.ico" alt="" width="32" height="32">
+        <span>PokeRetro Shop</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">☰</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a aria-current="page" href="catalog.html">Catalog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Catalog</h1>
+
+    <form id="filters" class="filters" aria-label="Filters">
+      <input name="q" type="search" placeholder="Search…" aria-label="Search">
+      <select name="type" aria-label="Type">
+        <option value="all">All Types</option>
+        <option value="Card">Graded Cards</option>
+        <option value="Game">Video Games</option>
+      </select>
+      <select name="platform" aria-label="Platform">
+        <option value="all">All Platforms</option>
+        <option>Switch</option><option>3DS</option><option>GameCube</option><option>Game Boy</option>
+      </select>
+      <select name="grade" aria-label="Grade">
+        <option value="all">All Grades</option>
+        <option>PSA 10</option><option>PSA 9</option><option>BGS 9.5</option><option>CGC 9</option>
+      </select>
+      <label>Max $ <input name="max" type="number" step="0.01" min="0" placeholder="200"></label>
+    </form>
+
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <div id="modalHost"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>PokeRetro Shop</strong><br>
+        Support: <a href="mailto:support@pokeretro.example">support@pokeretro.example</a></p>
+        <p><a href="https://youtu.be/YOUR_DEMO_VIDEO" target="_blank" rel="noopener">Project demo video</a> •
+           <a href="attributions.html">Attributions</a></p>
+      </div>
+      <div class="footer-dev">
+        <p>© <span id="year"></span> • Your Name • WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script type="module" src="scripts/catalog.js" defer></script>
+</body>
+</html>

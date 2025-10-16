@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact • PokeRetro Shop</title>
+  <meta name="description" content="Ask about inventory or join our restock list.">
+  <meta name="author" content="Your Name">
+  <link rel="icon" href="images/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact PokeRetro">
+  <meta property="og:description" content="Questions or trades? Reach out.">
+  <meta property="og:image" content="https://YOUR_USERNAME.github.io/wdd231/final/images/og-index.jpg">
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/wdd231/final/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/favicon.ico" alt="" width="32" height="32">
+        <span>PokeRetro Shop</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">☰</button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a aria-current="page" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Contact / Join</h1>
+    <form class="card" method="get" action="thanks.html">
+      <label>First Name* <input name="first" required autocomplete="given-name"></label>
+      <label>Last Name*  <input name="last"  required autocomplete="family-name"></label>
+      <label>Email*      <input type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label>Mobile      <input type="tel"   name="mobile" autocomplete="tel" placeholder="+1 (555) 555-1234"></label>
+      <label>Topic
+        <select name="topic">
+          <option>Restock Alerts</option>
+          <option>Buyback / Trade</option>
+          <option>Order Help</option>
+        </select>
+      </label>
+      <label>Message <textarea name="msg" rows="6" placeholder="What are you looking for?"></textarea></label>
+      <input type="hidden" name="ts" id="ts">
+      <button class="btn-primary" type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>PokeRetro Shop</strong><br>
+        Support: <a href="mailto:support@pokeretro.example">support@pokeretro.example</a></p>
+        <p><a href="https://youtu.be/YOUR_DEMO_VIDEO" target="_blank" rel="noopener">Project demo video</a> •
+           <a href="attributions.html">Attributions</a></p>
+      </div>
+      <div class="footer-dev">
+        <p>© <span id="year"></span> • Your Name • WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script>
+    document.getElementById('ts').value = new Date().toISOString();
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thanks • PokeRetro Shop</title>
+  <meta name="description" content="Thank you for contacting PokeRetro Shop.">
+  <meta name="author" content="Your Name">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/favicon.ico" alt="" width="32" height="32">
+        <span>PokeRetro Shop</span>
+      </a>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a aria-current="page" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Thanks!</h1>
+    <p>We received your request:</p>
+    <div id="summary" class="card"></div>
+    <p><a class="btn" href="index.html">Back to Home</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>PokeRetro Shop</strong><br>
+        Support: <a href="mailto:support@pokeretro.example">support@pokeretro.example</a></p>
+      </div>
+      <div class="footer-dev">
+        <p>© <span id="year"></span> • Your Name • WDD 231</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script>
+    const p = new URLSearchParams(location.search);
+    const get = k => p.get(k) ?? '—';
+    document.getElementById('summary').innerHTML = `
+      <p><strong>Name:</strong> ${get('first')} ${get('last')}</p>
+      <p><strong>Email:</strong> ${get('email')}</p>
+      <p><strong>Mobile:</strong> ${get('mobile')}</p>
+      <p><strong>Topic:</strong> ${get('topic')}</p>
+      <p><strong>Sent:</strong> ${get('ts')}</p>
+      <p><strong>Message:</strong><br>${(get('msg')||'').replace(/\n/g,'<br>')}</p>`;
+  </script>
+</body>
+</html>
