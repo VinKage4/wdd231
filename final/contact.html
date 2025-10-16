@@ -35,78 +35,81 @@
   </header>
 
   <main class="container contact-layout">
-  <!-- Left: Contact/Join form -->
-  <section class="card contact-card" aria-labelledby="contactTitle">
-    <h1 id="contactTitle">Contact / Join</h1>
+    <!-- Left: Contact/Join form -->
+    <section class="card contact-card" aria-labelledby="contactTitle">
+      <h1 id="contactTitle">Contact / Join</h1>
 
-    <form class="contact-form" method="get" action="thankyou.html" novalidate>
-      <div class="form-grid">
-        <label class="field">
-          <span class="label">First Name *</span>
-          <input type="text" name="first" required autocomplete="given-name" placeholder="Ash" />
-        </label>
+      <!-- NOTE: action points to the file in the SAME folder -->
+      <form class="contact-form" method="get" action="./thankyou.html" novalidate>
+        <div class="form-grid">
+          <label class="field">
+            <span class="label">First Name *</span>
+            <input type="text" name="first" required autocomplete="given-name" placeholder="Ash" />
+          </label>
 
-        <label class="field">
-          <span class="label">Last Name *</span>
-          <input type="text" name="last" required autocomplete="family-name" placeholder="Ketchum" />
-        </label>
+          <label class="field">
+            <span class="label">Last Name *</span>
+            <input type="text" name="last" required autocomplete="family-name" placeholder="Ketchum" />
+          </label>
 
-        <label class="field">
-          <span class="label">Email *</span>
-          <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
-        </label>
+          <label class="field">
+            <span class="label">Email *</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          </label>
 
-        <label class="field">
-          <span class="label">Mobile *</span>
-          <input type="tel" name="mobile" required autocomplete="tel" placeholder="+1 (555) 555-1234" />
-        </label>
+          <label class="field">
+            <span class="label">Mobile *</span>
+            <input type="tel" name="mobile" required autocomplete="tel" placeholder="+1 (555) 555-1234" />
+          </label>
 
-        <label class="field span-2">
-          <span class="label">Topic</span>
-          <select name="topic">
-            <option>Restock Alerts</option>
-            <option>Trade-in / Sell</option>
-            <option>Order Status</option>
-            <option>Join as Vendor</option>
-            <option>Other</option>
-          </select>
-        </label>
+          <label class="field span-2">
+            <span class="label">Topic</span>
+            <select name="topic">
+              <option>Restock Alerts</option>
+              <option>Trade-in / Sell</option>
+              <option>Order Status</option>
+              <option>Join as Vendor</option>
+              <option>Other</option>
+            </select>
+          </label>
 
-        <label class="field span-2">
-          <span class="label">Message</span>
-          <textarea name="message" rows="6" placeholder="What are you looking for?"></textarea>
-        </label>
+          <!-- CHANGED: name="msg" (what thankyou.html reads) -->
+          <label class="field span-2">
+            <span class="label">Message</span>
+            <textarea name="msg" rows="6" placeholder="What are you looking for?"></textarea>
+          </label>
 
-        <input type="hidden" name="timestamp" id="timestamp" />
-      </div>
+          <!-- CHANGED: name="ts" and id="ts" (what thankyou.html reads) -->
+          <input type="hidden" name="ts" id="ts" />
+        </div>
 
-      <button type="submit" class="btn-primary wide">Send</button>
-    </form>
-  </section>
+        <button type="submit" class="btn-primary wide">Send</button>
+      </form>
+    </section>
 
-  <!-- Right: Helpful info (collapses under form on mobile) -->
-  <aside class="card contact-info" aria-label="Store information">
-    <h2>Need help?</h2>
-    <p>Email: <a href="mailto:support@pokeretro.example">support@pokeretro.example</a></p>
-    <p>Hours: Mon–Sat 10:00–19:00</p>
-    <p>Location: 123 Trainer Ave, Pewter City</p>
-    <hr>
-    <ul class="bullets">
-      <li>Join our restock list for graded cards and games.</li>
-      <li>Vendors welcome—ask about our intake process.</li>
-      <li>Response time: under 1 business day.</li>
-    </ul>
-  </aside>
-</main>
+    <!-- Right: Helpful info (collapses under form on mobile) -->
+    <aside class="card contact-info" aria-label="Store information">
+      <h2>Need help?</h2>
+      <p>Email: <a href="mailto:support@pokeretro.example">support@pokeretro.example</a></p>
+      <p>Hours: Mon–Sat 10:00–19:00</p>
+      <p>Location: 123 Trainer Ave, Pewter City</p>
+      <hr>
+      <ul class="bullets">
+        <li>Join our restock list for graded cards and games.</li>
+        <li>Vendors welcome—ask about our intake process.</li>
+        <li>Response time: under 1 business day.</li>
+      </ul>
+    </aside>
+  </main>
 
-    <!-- Footer (with shorter mailto to satisfy the audit) -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p><strong>PokéBiz Chamber</strong><br>
         Support &amp; inquiries: <a href="mailto:info@pokebiz.org">info@pokebiz.org</a></p>
-
-        <!-- Social icons -->
+        
+<!-- socials -->
         <div class="social" aria-label="Social media">
           <a class="icon facebook" href="https://facebook.com/YourPage" target="_blank" rel="noopener" aria-label="Facebook">
             <svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -135,6 +138,7 @@
 
   <script src="scripts/main.js" defer></script>
   <script>
+    // Fill timestamp the thank-you page expects
     document.getElementById('ts').value = new Date().toISOString();
   </script>
 </body>
