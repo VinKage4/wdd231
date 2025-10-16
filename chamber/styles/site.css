@@ -347,3 +347,96 @@ dialog::backdrop{ background:rgba(0,0,0,.35); }
   .benefit-card:hover,
   .benefit-card:focus-within{ transform:none; box-shadow:none; }
 }
+
+/* Visitor message */
+.visitor-msg{
+  display:flex; align-items:center; gap:.6rem;
+  background:var(--surface); border:1px solid #e5e7eb; border-radius:12px;
+  padding:.6rem .8rem; margin:1rem 0; position:relative;
+}
+#dismissMsg{ margin-left:auto; border:1px solid #e5e7eb; border-radius:999px; padding:.2rem .5rem; background:#fff; }
+
+/* Discover grid container uses named areas */
+.discover-grid{
+  display:grid; gap:1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h";
+}
+
+/* Cards */
+.dcard{
+  background:var(--surface); border:1px solid #e5e7eb; border-radius:14px; box-shadow:var(--shadow);
+  padding:.85rem; display:grid; gap:.5rem;
+}
+.dcard h2{ margin:0; font-size:1.05rem; }
+.dmedia{ margin:0; border-radius:10px; overflow:hidden; }
+.dmedia img{ display:block; width:100%; height:auto; }
+.daddr{ font-style:normal; color:var(--muted); }
+.dactions{ display:flex; align-items:center; gap:.5rem; }
+.dactions .more{ font-size:.95rem; color:var(--ink); }
+
+/* Area classes mapping to grid-template-areas */
+.area-a{ grid-area: a; }
+.area-b{ grid-area: b; }
+.area-c{ grid-area: c; }
+.area-d{ grid-area: d; }
+.area-e{ grid-area: e; }
+.area-f{ grid-area: f; }
+.area-g{ grid-area: g; }
+.area-h{ grid-area: h; }
+
+/* Medium screens (641px–1024px) */
+@media (min-width: 641px) and (max-width: 1024px){
+  .discover-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e f"
+      "g h";
+  }
+
+  /* Hover effects ON at medium+ */
+  .dmedia img{
+    transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+  }
+  .dcard:hover .dmedia img{
+    transform: scale(1.03);
+    filter: saturate(1.05) contrast(1.03);
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  }
+}
+
+/* Large screens (≥1025px) — more magazine-like layout */
+@media (min-width: 1025px){
+  .discover-grid{
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+      "a b c"
+      "a d e"
+      "f g h";
+  }
+  .dmedia img{
+    transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+  }
+  .dcard:hover .dmedia img{
+    transform: translateY(-2px) scale(1.03);
+    filter: saturate(1.06) contrast(1.05);
+    box-shadow: 0 14px 28px rgba(0,0,0,.12);
+  }
+}
+
+/* Buttons */
+.btn-ghost{
+  text-decoration:none; border:1px solid #e5e7eb; border-radius:999px;
+  padding:.45rem .75rem; background:#fff; cursor:pointer;
+}
+.btn-ghost:hover{ background:#f3f4f6; }
