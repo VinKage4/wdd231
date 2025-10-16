@@ -79,7 +79,7 @@ main h1{ font-size:clamp(1.4rem,2.5vw,2rem); margin:1rem 0 .5rem; }
   }
 }
 
-/* Optional: footer icon styling (if not already present) */
+/*  footer icon styling  */
 .social{ display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
 .social .icon{ width:44px; height:44px; display:grid; place-items:center;
   text-decoration:none; border:1px solid #e5e7eb; border-radius:999px;
