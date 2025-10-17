@@ -3,6 +3,8 @@ import { getPrefs, savePrefs } from './modules/store.js';
 import { cardHTML, modalHTML } from './modules/templating.js';
 import { applyFilters } from './modules/filters.js';
 import { wireModals } from './modules/modal.js';
+import { loadCatalog } from './catalog.js';
+document.addEventListener('DOMContentLoaded', loadCatalog);
 
 const grid = document.getElementById('grid');
 const modalHost = document.getElementById('modalHost');
